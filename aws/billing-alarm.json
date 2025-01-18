@@ -1,0 +1,22 @@
+{
+    "AlarmName": "BillingAlarm",
+    "AlarmDescription": "Triggers when estimated charges exceed $100",
+    "ActionsEnabled": true,
+    "AlarmActions": [
+      "arn:aws:sns:us-east-1:339712895985:billing-alarm"
+    ],
+    "MetricName": "EstimatedCharges",
+    "Namespace": "AWS/Billing",
+    "Statistic": "Maximum",
+    "Dimensions": [
+      {
+        "Name": "Currency",
+        "Value": "USD"
+      }
+    ],
+    "Period": 21600,
+    "EvaluationPeriods": 1,
+    "Threshold": 100.0,
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold"
+  }
+  
