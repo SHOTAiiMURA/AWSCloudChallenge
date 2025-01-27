@@ -29,7 +29,7 @@ Amplify.configure({
 // identityPoolId: process. env .REACT_APP IIDENTITY_POOL_ID, /1 REQUIRED - A
     region: process.env.REACT_AWS_PROJECT_REGION,
     userPoolId: process.env.REACT_APP_AWS_USER_POOLS_ID,
-    userPoolWebClientId: process.env.REACT_APP_AWS_USER_POOLS_WEB_CLIENT_ID,
+    userPoolWebClientId: process.env.REACT_APP_CLIENT_ID,
   }
 }); 
 const router = createBrowserRouter([
