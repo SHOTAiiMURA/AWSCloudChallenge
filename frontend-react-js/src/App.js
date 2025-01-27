@@ -19,31 +19,19 @@ import {
 import {Amplify} from 'aws-amplify';
 
 Amplify.configure({
+  "AWS_PROJECT_REGION": process. env.REACT_AWS_PROJECT_REGION,
+  "aws_cognito_region": process.env.REACT_APP_AWS_COGNITO_REGION,
+  "aws_user_pools_id": process.env.REACT_APP_AWS_USER_POOLS_ID,
+  "aws_user_pools_web_client_id": process.env. REACT_APP_CLIENT_ID,
+  "oauth" : {},
   Auth: {
-    Cognito: {
-      region: "${AWS_DEFAULT_REGION}"
-      userPoolId: "ap-northeast-1_rIAQ0HJEC",
-      userPoolClientId: "11rba13rfpip474b4ipqq3rikd",
-      loginWith: {
-        email: true,
-      },
-      signUpVerificationMethod: "code",
-      userAttributes: {
-        email: {
-          required: true,
-        },
-      },
-      allowGuestAccess: true,
-      passwordFormat: {
-        minLength: 8,
-        requireLowercase: true,
-        requireUppercase: true,
-        requireNumbers: true,
-        requireSpecialCharacters: true,
-      },
-    },
-  },
-})
+// We are not using an Identity Pool
+// identityPoolId: process. env .REACT_APP IIDENTITY_POOL_ID, /1 REQUIRED - A
+    region: process.env.REACT_AWS_PROJECT_REGION,
+    userPoolId: process.env.REACT_APP_AWS_USER_POOLS_ID,
+    userPoolWebClientId: process.env.REACT_APP_AWS_USER_POOLS_WEB_CLIENT_ID,
+  }
+}); 
 const router = createBrowserRouter([
   {
     path: "/",
